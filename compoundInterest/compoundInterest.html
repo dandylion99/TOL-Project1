@@ -12,8 +12,8 @@
       var R = 0.1;
 
 
-      function simpleInterest(p, r, t) {
-        return p*(1+r*t);             // Function returns the product of a and b
+      function compoundInterest(p, r, t) {
+        return p*(Math.pow(1+r,t));             // Function returns the product of a and b
       }
 
       function drawTrendlines() {
@@ -22,8 +22,9 @@
             data.addColumn('number', 'Amount');
             data.addColumn({type:'string', role:'annotation'});
 
+
             for (let t = 0; t<7; t++){
-              data.addRow([t, simpleInterest(P, R, t), "year "+t])
+              data.addRow([t, compoundInterest(P,R,t), "year "+t])
 
             }
             /*
@@ -50,11 +51,10 @@
               vAxis: {
                 baseline: 0,
                 maxValue : 14000,
-
                 title: 'Amount'
               },
               //colors: ['#AB0D06', '#007329'],
-              colors: ['#007329'],
+              colors: ['#AB0D06'],
 
               /*
               trendlines: {

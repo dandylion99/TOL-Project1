@@ -11,19 +11,25 @@
       var P = 7000;
       var R = 0.1;
 
-
       function simpleInterest(p, r, t) {
-        return p*(1+r*t);             // Function returns the product of a and b
+        return p*(1+r*t);
+      }
+
+      function compoundInterest(p, r, t) {
+        return p*(Math.pow(1+r,t));        
       }
 
       function drawTrendlines() {
             var data = new google.visualization.DataTable();
             data.addColumn('number', 'X');
-            data.addColumn('number', 'Amount');
+            data.addColumn('number', 'Simple Interest Amount');
+            data.addColumn('number', 'Compound Interest Amount');
+
             data.addColumn({type:'string', role:'annotation'});
 
+
             for (let t = 0; t<7; t++){
-              data.addRow([t, simpleInterest(P, R, t), "year "+t])
+              data.addRow([t, simpleInterest(P,R,t), compoundInterest(P,R,t), "year "+t])
 
             }
             /*
@@ -42,17 +48,25 @@
               width: 800,
               height: 400,
             	pointSize: 5,
-              hAxis: {
-                
+              annotations: {
+                textStyle: {
+                  color: '#000000',
+                },
+              },
+
+
+              hAxis: {               
                 title: 'Time (year)',
                 ticks: [0,1,2,3,4,5,6]
               },
+
               vAxis: {
                 baseline: 0,
+                maxValue : 14000,
                 title: 'Amount'
               },
-              //colors: ['#AB0D06', '#007329'],
-              colors: ['#007329'],
+
+              colors: ['#007329','#AB0D06'],
 
               /*
               trendlines: {
