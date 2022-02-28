@@ -9,7 +9,8 @@
 
       //given context
       var P = 7000;
-      var R = 0.1;
+      var R1 = 0.12; //simple interest
+      var R2 = 0.1; //compound interest
 
       function simpleInterest(p, r, t) {
         return p*(1+r*t);
@@ -29,7 +30,7 @@
 
 
             for (let t = 0; t<11; t++){
-              data.addRow([t, simpleInterest(P,R,t), compoundInterest(P,0.08,t), "year "+t])
+              data.addRow([t, simpleInterest(P,R1,t), compoundInterest(P,R2,t), "year "+t])
 
             }
             /*
