@@ -8,9 +8,9 @@
       google.charts.setOnLoadCallback(drawTrendlines);
 
       //given context
-      var P = 7000;
-      var R = 0.1;
-
+      var P = 30000;
+      var R1 = 0.02; //simple interest
+      var R2 = 0.05; //compound interest
 
       function simpleInterest(p, r, t) {
         //n = (p*(1+r*t),2).toFixed(2)
@@ -27,12 +27,16 @@
       function drawTrendlines() {
             var data = new google.visualization.DataTable();
             data.addColumn('number', 'X');
-            data.addColumn('number', 'Amount');
+            data.addColumn('number', 'Simple Interest Amount');
+            data.addColumn('number', 'Compound Interest Amount');
+
             data.addColumn({type:'string', role:'annotation'});
 
 
-            for (let t = 0; t<7; t++){
-              data.addRow([t, compoundInterest(P,R,t), "year "+t])
+
+
+            for (let t = 0; t<11; t++){
+              data.addRow([t, simpleInterest(P,R1,t), compoundInterest(P,R2,t), "year "+t])
 
             }
             /*
@@ -51,18 +55,25 @@
               width: 800,
               height: 400,
             	pointSize: 5,
-              hAxis: {
-                
-                title: 'Time (year)',
-                ticks: [0,1,2,3,4,5,6]
+              annotations: {
+                textStyle: {
+                  color: '#000000',
+                },
               },
+
+
+              hAxis: {               
+                title: 'Time (year)',
+                ticks: [0,1,2,3,4,5,6,7,8,9,10]
+              },
+
               vAxis: {
                 baseline: 0,
                 maxValue : 14000,
                 title: 'Amount'
               },
-              //colors: ['#AB0D06', '#007329'],
-              colors: ['#AB0D06'],
+
+              colors: ['#007329','#AB0D06'],
 
               /*
               trendlines: {
@@ -79,8 +90,9 @@
   </head>
 
   <body>
-    <!--Div that will hold the pie chart-->
     <h3 align="center">Hover your mouse over points to read exact numbers!</h3>
+
+    <!--Div that will hold the pie chart-->
     <div id="chart_div" align="center"></div>
   </body>
 </html>

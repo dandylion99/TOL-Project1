@@ -13,7 +13,15 @@
 
 
       function simpleInterest(p, r, t) {
-        return p*(1+r*t);             // Function returns the product of a and b
+        //n = (p*(1+r*t),2).toFixed(2)
+        n=Math.round(p*(1+r*t)*100)
+        return n/100;
+      }
+
+      function compoundInterest(p, r, t) {
+        //n = (p*(Math.pow(1+r,t))).toFixed(2)
+        n = Math.round(p*(Math.pow(1+r,t))*100)
+        return n/100;        
       }
 
       function drawTrendlines() {
