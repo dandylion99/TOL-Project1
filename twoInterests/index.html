@@ -28,8 +28,8 @@
             data.addColumn({type:'string', role:'annotation'});
 
 
-            for (let t = 0; t<7; t++){
-              data.addRow([t, simpleInterest(P,R,t), compoundInterest(P,R,t), "year "+t])
+            for (let t = 0; t<11; t++){
+              data.addRow([t, simpleInterest(P,R,t), compoundInterest(P,0.08,t), "year "+t])
 
             }
             /*
@@ -57,11 +57,11 @@
 
               hAxis: {               
                 title: 'Time (year)',
-                ticks: [0,1,2,3,4,5,6]
+                ticks: [0,1,2,3,4,5,6,7,8,9,10]
               },
 
               vAxis: {
-                baseline: 0,
+                baseline: 5000,
                 maxValue : 14000,
                 title: 'Amount'
               },
@@ -83,6 +83,7 @@
   </head>
 
   <body>
+    <p>hover you mouse over the points to see details</p>
     <!--Div that will hold the pie chart-->
     <div id="chart_div" align="center"></div>
   </body>
