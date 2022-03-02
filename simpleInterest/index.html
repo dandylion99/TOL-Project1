@@ -30,7 +30,7 @@
             data.addColumn('number', 'Amount');
             data.addColumn({type:'string', role:'annotation'});
 
-            for (let t = 0; t<7; t++){
+            for (let t = 0; t<11; t++){
               data.addRow([t, simpleInterest(P, R, t), "year "+t])
 
             }
@@ -53,7 +53,7 @@
               hAxis: {
                 
                 title: 'Time (year)',
-                ticks: [0,1,2,3,4,5,6]
+                ticks: [0,1,2,3,4,5,6,7,8,9,10]
               },
               vAxis: {
                 baseline: 0,
