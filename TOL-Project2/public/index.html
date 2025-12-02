@@ -48,7 +48,6 @@
   function myFunction(){
     var x = document.getElementById("sim-capital");
     var y = document.getElementById("sim-rate");
-
     y.value=x.value;
   };
 
@@ -57,6 +56,7 @@
 
   <!-- App Styling -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://use.typekit.net/jnb6wvl.css">
   <link rel="stylesheet" href="styles/main.css">
 
   <!-- TODO: Enable First Input Delay polyfill library. -->
@@ -67,7 +67,7 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+  <!-- <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
@@ -83,94 +83,27 @@
         </button>
       </div>
     </div>
-  </header>
-  <button onclick="window.location.href='tutor.html'" style="height:400">Tutor</button>
-  <button onclick="window.location.href='tutee.html'" style="height:400">Tutee</button>
+  </header> -->
 
-  <!--
-
-  <main class="mdl-layout__content mdl-color--grey-100" style="width=100%">
-    <div id="prob-info-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:35%; height:auto; float:left; display:inline">
-      <div id="probdcrp-container">
-        <h4 class="header">Problem Description</h4>
-        <p>Jenny just celebrated her 18th birthday and she’s an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</p>
-      </div>
-      <div id="simple-cal">
-        <h5>Simple Interest Calculator</h5>
-        <p> A=P(1+r*t) </p>
-        <form name="simpleCal">
-        P = <input type="number" id="sim-capital"><br> 
-        r = <input type="number" id="sim-rate" onchange="myFunction()"><br> 
-        t = <input type="number" id="sim-time"><br> 
-        <p id="sim-A"> A =  </p>
-      </form>
-      </div>
-
-      <div id="compound-cal">
-        <h5>Compound Interest Calculator</h5>
-        <p> A=P(1+r)^t </p>
-        P = <input type="number" id="com-capital"><br> 
-        r = <input type="number" id="com-rate"><br> 
-        t = <input type="number" id="com-time"><br> 
-
-        <p id="com-A"> A =  </p>
-
-      </div>
-
-      <div id="answer-container">
-        Q1: How much debt does Jenny have to repay the government in 10 years? <input type="number" name="q1"><br>
-        Q2: How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2"><br>
-        Q3: Should Jenny loan money from the government or the bank? <input type="text" name="q3"><br>
-      </div>
-    </div>
-
-    <div id="hint-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width: 25%; float:left; display:inline">
-      <div>
-        <h4 class="header">Hints for giving feedback</h4>
-        <p>sfsfrvfv.</p>
-      </div>
-
-    </div>
+<div style="width: 100%; vertical-align: middle; text-align: center; margin:auto">
   
-    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid" style="float:left; display:inline">
-    -->
-      <!-- Messages container -->
-      <!--
-      <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:100%">
-      -->
-        <!--<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="width: 100%">-->
-        <!--
-        <div class="mdl-card__supporting-text">
-          <div id="messages">
-          </div>
-          <form id="message-form" action="#">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="message" autocomplete="off">
-              <label class="mdl-textfield__label" for="message">Message...</label>
-            </div>
-            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-              Send
-            </button>
-          </form>
-          <form id="image-form" action="#">
-            <input id="mediaCapture" type="file" accept="image/*" capture="camera">
-            <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
-              <i class="material-icons">image</i>
-            </button>
-          </form>
-        </div>
-      </div>
+  <div class="instruction" style="width: 30%; text-align: left; margin-left: 35%">
+    <h2>Learn compound interest with peers!</h2>
+    <p>If you're assigned to be a <u>tutor</u>, support your tutee when they need help. Not sure how to tutor? Don't worry, we will give you hints on how to give effective feedback to your peer!</p>
+    <p>If you're assigned to be a <u>tutee</u>, here are some practice problems  to check your learning. Don't be shy to ask your tutor for help if you're stuck or have any questions!</p>
+    <p><strong>Your assigned role:</strong></p>
+  </div>
 
-      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
-        <div class="mdl-snackbar__text"></div>
-        <button class="mdl-snackbar__action" type="button"></button>
-      </div>
-    </div>
-  </main>
-</div>
-    -->
-
-
+  <div class="role-box" style="width:15%; height:45%;" onclick="window.location.href='tutor.html'">
+    <img src="images/key.png" style="width:60%;margin: 10% 0 5% 0" >
+    <div class="role-button">Tutor</div>
+  </div>
+  <div class="role-box" style="width:15%; height:45%;"  onclick="window.location.href='tutee.html'">
+    <img src="images/lock.png" style="width:60%;margin: 10% 0 5% 0">
+    <div class="role-button">Tutee</div>
+    <!--<button style="height:400">Tutee</button>-->
+  </div>
+<div>
 
 <!-- This script is created by webpack -->
 <script src="scripts/main.js"></script>
